@@ -30,5 +30,4 @@ def show_product(request, slug):
     context = {
         'phone': phone
     }
-    print(phone)
     return render(request, template, context)
