@@ -14,10 +14,8 @@ def show_catalog(request):
         phones = Phone.objects.order_by('price').reverse()
     elif sort_ == 'min_price':
         phones = Phone.objects.order_by('price')
-    elif sort_ == 'name':
-        phones = Phone.objects.order_by('name')
     else:
-        phones = Phone.objects.all()
+        phones = Phone.objects.order_by(sort_)
 
     context = {
         'phones': phones,
